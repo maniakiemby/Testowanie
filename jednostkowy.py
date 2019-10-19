@@ -1,0 +1,1 @@
+# tworzyłem tutaj funkcje i testy, później rozdzieliłem je na my_path i test_my_path
