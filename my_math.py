@@ -11,3 +11,6 @@ def reversal(word):
 def is_palindrom(word):
     lower_word = word.lower()
     return lower_word == lower_word[::-1]
+
+def squared(x):
+    return x ** 2

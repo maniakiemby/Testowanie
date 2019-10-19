@@ -25,8 +25,14 @@ def test_is_palindrom():
     assert my_math.is_palindrom('ala')
     assert not my_math.is_palindrom('as')     # to samo co: assert my_math.is_palindrom('as') == False
 
+def test_squared():
+    assert my_math.squared(4) == 16
+    assert my_math.squared(10) == 100
+    assert my_math.squared(7) == 49
 
-test_add()
-test_product()
-test_reversal()
-test_is_palindrom()
+# test_add()
+# test_product()
+# test_reversal()
+# test_is_palindrom()
+# test_squared()
+# zaczynam używać pytest, nie jest potrzebne wywoływanie funkcji
