@@ -51,5 +51,9 @@ def factorial(n): # silnia
 
 if __name__ == '__main__':
 
-    assert factorial(3) == 7, 'factorial Failed'
-    print('factorial Passed')
+    assert factorial(3) == 6, 'factorial (3) Failed'
+    print('factorial (3) Passed')
+
+    assert factorial(10) == 3628800, 'factorial (10) Failed'
+    print('factorial (10) Passed')
+
