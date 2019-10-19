@@ -23,6 +23,25 @@ class Lamp:
     def is_ligtening(self):
         return self.light
 
+
+class Bicycle:
+    number_of_wheels = 2
+
+    def __init__(self, color, brand):
+        self.color = color
+        self.brand = brand
+
+    def bike_info(self):
+        return f'This is a {self.color} {self.brand} '\
+               f'with {self.number_of_wheels} wheels.'
+
+
+my_bike = Bicycle('black','Romet')
+print(my_bike.bike_info)
+your_bike = Bicycle('Yellow', 'Fuji')
+print(your_bike.bike_info)
+
+
 d1 = Dog('Azor')
 d2 = Dog('Rex')
 print(d1.speak())
