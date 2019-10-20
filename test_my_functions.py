@@ -29,4 +29,4 @@ class TestDivide(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
 
-"""Zadanie domowe: uzyskać 100% (coverage)"""
+"""Zadanie domowe: uzyskać 100% pokrycia testami (coverage)"""
