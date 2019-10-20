@@ -1,3 +1,4 @@
+import pytest
 import my_class
 
 def test_dog_initialization():
@@ -24,15 +25,19 @@ def test_bicycle_initialization_2():
     assert bar.bike_info() == 'This is a Yellow Fuji with 2 wheels.'
 
 
-def test_add_initialization_1():
+
+def test_calc_add_initialization_integer():
     foo = my_class.Calc()
     assert foo.add(5, 10) == 15
-def test_add_initialization_2():
+    assert foo.add(-10, 100) == 90
+    assert foo.add(100, -150) == -50
+    assert foo.add(10000, 11000) == 21000
+def test_calc_add_initialization_float():
+    bar = my_class.Calc()
+    assert bar.add(5.2, 5.2) == 10.4
+    assert bar.add(-7, -3) == -10
+    assert pytest.approx(bar.add(1.21351, 2.45678), 0.00001) == 3.67029
+def test_calc_add_initialization_str():
     q = my_class.Calc()
-    assert q.add(-10, 100) == 90
-def test_add_initialization_3():
-    w = my_class.Calc()
-    assert w.add(100, -150) == -50
-def test_add_initialization_4():
-    e = my_class.Calc()
-    assert e.add(10000, 11000) == 21000
+    assert q.add('ab', 'cd') == 'abcd'
+    assert q.add('', '') == ''
