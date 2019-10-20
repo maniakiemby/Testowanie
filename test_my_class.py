@@ -24,20 +24,21 @@ def test_bicycle_initialization_2():
     bar = my_class.Bicycle('Yellow', 'Fuji')
     assert bar.bike_info() == 'This is a Yellow Fuji with 2 wheels.'
 
+@pytest.fixture
+def c():
+    calc = my_class.Calc()
+    return calc
 
 
-def test_calc_add_initialization_integer():
-    foo = my_class.Calc()
-    assert foo.add(5, 10) == 15
-    assert foo.add(-10, 100) == 90
-    assert foo.add(100, -150) == -50
-    assert foo.add(10000, 11000) == 21000
-def test_calc_add_initialization_float():
-    bar = my_class.Calc()
-    assert bar.add(5.2, 5.2) == 10.4
-    assert bar.add(-7, -3) == -10
-    assert pytest.approx(bar.add(1.21351, 2.45678), 0.00001) == 3.67029
-def test_calc_add_initialization_str():
-    q = my_class.Calc()
-    assert q.add('ab', 'cd') == 'abcd'
-    assert q.add('', '') == ''
+def test_calc_add_initialization_integer(c):
+    assert c.add(5, 10) == 15
+    assert c.add(-10, 100) == 90
+    assert c.add(100, -150) == -50
+    assert c.add(10000, 11000) == 21000
+def test_calc_add_initialization_float(c):
+    assert c.add(5.2, 5.2) == 10.4
+    assert c.add(-7, -3) == -10
+    assert pytest.approx(c.add(1.21351, 2.45678), 0.00001) == 3.67029
+def test_calc_add_initialization_str(c):
+    assert c.add('ab', 'cd') == 'abcd'
+    assert c.add('', '') == ''
