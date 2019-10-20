@@ -44,7 +44,12 @@ class Calc:
 
 
 def circle_area(r):
+    if type(r) not in [float, int]:     # if type(r) != int or float:
+        raise TypeError('The radius must be a number')
+    if r < 0:
+        raise ValueError('The radius cannot be negative !')
     return math.pi * (r ** 2)
+
 
 
 my_bike = Bicycle('black','Romet')

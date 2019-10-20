@@ -51,6 +51,14 @@ def test_calc_add_initialization_float(calc):
 
 
 def test_area():
-    assert pytest.approx(my_class.circle_area(1), 0.001) == math.pi
+    assert pytest.approx(my_class.circle_area(1), 0.0001) == math.pi
     assert my_class.circle_area(0) == 0
     assert pytest.approx(my_class.circle_area(2.1), 0.0001) == math.pi * (2.1 ** 2)
+def test_area_exceptions():
+    with pytest.raises(ValueError):
+        my_class.circle_area(-3)
+def test_area_type_exception():
+    with pytest.raises(ValueError):
+        my_class.circle_area(3 + 5j)
+        my_class.circle_area(True)
+        my_class.circle_area('radius')
