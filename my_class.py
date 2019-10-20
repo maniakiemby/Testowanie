@@ -36,6 +36,11 @@ class Bicycle:
                f'with {self.number_of_wheels} wheels.'
 
 
+class Calc:
+    def add(self, x, y):
+        return x + y
+
+
 my_bike = Bicycle('black','Romet')
 print(my_bike.bike_info)
 your_bike = Bicycle('Yellow', 'Fuji')

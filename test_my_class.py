@@ -22,3 +22,17 @@ def test_bicycle_initialization():
 def test_bicycle_initialization_2():
     bar = my_class.Bicycle('Yellow', 'Fuji')
     assert bar.bike_info() == 'This is a Yellow Fuji with 2 wheels.'
+
+
+def test_add_initialization_1():
+    foo = my_class.Calc()
+    assert foo.add(5, 10) == 15
+def test_add_initialization_2():
+    q = my_class.Calc()
+    assert q.add(-10, 100) == 90
+def test_add_initialization_3():
+    w = my_class.Calc()
+    assert w.add(100, -150) == -50
+def test_add_initialization_4():
+    e = my_class.Calc()
+    assert e.add(10000, 11000) == 21000
