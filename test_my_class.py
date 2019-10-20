@@ -1,5 +1,8 @@
-import pytest
-import my_class
+import math # 1 blok importu - biblioteki standardowe
+            # oddzielamy te bloki importów
+import pytest   # 2 blok - biblioteki, które trzeba zainstalować
+
+import my_class     # 3 blok -  importy naszego projektu
 
 def test_dog_initialization():
     d = my_class.Dog('Azor')
@@ -36,7 +39,7 @@ def calc():
                             (5, 10, 15),
                             (0, 0, 0),
                             (-3, -7, -10),
-                             ('ab', 'cd', 'abcd'),
+                            ('ab', 'cd', 'abcd'),
                             ('', '', '')
                          ])
 def test_calc_add_initialization_integer_and_strings(num1, num2, res, calc):
@@ -45,3 +48,9 @@ def test_calc_add_initialization_float(calc):
     assert calc.add(5.2, 5.2) == 10.4
     assert calc.add(-7, -3) == -10
     assert pytest.approx(calc.add(1.21351, 2.45678), 0.00001) == 3.67029
+
+
+def test_area():
+    assert pytest.approx(my_class.circle_area(1), 0.001) == math.pi
+    assert my_class.circle_area(0) == 0
+    assert pytest.approx(my_class.circle_area(2.1), 0.0001) == math.pi * (2.1 ** 2)

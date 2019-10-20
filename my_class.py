@@ -1,3 +1,5 @@
+import math
+
 class Dog:
     def __init__(self, name):
         self.name = name
@@ -39,6 +41,10 @@ class Bicycle:
 class Calc:
     def add(self, x, y):
         return x + y
+
+
+def circle_area(r):
+    return math.pi * (r ** 2)
 
 
 my_bike = Bicycle('black','Romet')
